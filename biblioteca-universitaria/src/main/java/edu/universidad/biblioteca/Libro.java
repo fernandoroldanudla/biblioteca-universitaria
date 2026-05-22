@@ -3,11 +3,13 @@ package edu.universidad.biblioteca;
 public class Libro {
     private String titulo;
     private String autor;
+    private int ano;
     private boolean disponible = true;
 
-    public Libro(String titulo, String autor) {
+    public Libro(String titulo, String autor, int ano) {
         this.titulo = titulo;
         this.autor = autor;
+        this.ano = ano;
     }
 
     public boolean estaDisponible() {
@@ -31,5 +33,9 @@ public class Libro {
 
     public String getAutor() {
         return autor;
+    }
+
+    public int getAno() {
+        return ano;
     }
 }
