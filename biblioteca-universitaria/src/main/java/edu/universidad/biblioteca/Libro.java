@@ -15,11 +15,21 @@ public class Libro {
     }
 
     public void prestar() {
-        if (!disponible) throw new IllegalStateException("Libro no disponible");
+        if (!disponible) {
+            throw new IllegalStateException("Libro no disponible");
+        }
         disponible = false;
     }
 
     public void devolver() {
         disponible = true;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getAutor() {
+        return autor;
     }
 }
