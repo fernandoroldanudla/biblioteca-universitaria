@@ -33,19 +33,10 @@ jobs:
       - name: Build and Test
         run: mvn clean verify
 
-      # 4. Ejecutar Checkstyle
-      - name: Checkstyle Analysis
-        run: mvn checkstyle:checkstyle
-        continue-on-error: true
-
       # 5. Ejecutar PMD
       - name: PMD Analysis
         run: mvn pmd:check
         continue-on-error: true
-
-      # 6. Generar reporte de cobertura con JaCoCo
-      - name: Generate Coverage Report
-        run: mvn jacoco:report
 
       # Paso 7: Subir artefactos generados
       - name: Upload artifacts
@@ -53,6 +44,4 @@ jobs:
         with:
           name: Maven-Reports
           path: |
-            biblioteca-universitaria/target/site/jacoco/jacoco.xml
-            biblioteca-universitaria/target/checkstyle-result.xml
             biblioteca-universitaria/target/pmd.xml
